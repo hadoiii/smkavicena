@@ -11,4 +11,10 @@ class SiswaController extends Controller
         $data_siswa = \App\Models\Siswa::all();
         return view('siswa.index', ['data_siswa' => $data_siswa]);
     }
+
+    public function create(Request $request)
+    {
+        \App\Models\Siswa::create($request->all());
+        return redirect('/siswa')->with('sukses', 'Data Berhasil Di-input!');
+    }
 }
