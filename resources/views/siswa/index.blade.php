@@ -9,7 +9,7 @@
         <!-- Notifikasi Keberhasilan Penginputan Data -->
         @if(session('sukses'))
         <div class="alert alert-success" role="alert">
-        Data Berhasil Di-input
+       {{session('sukses')}}
         </div>
         @endif
         <!-- Akhir Notifikasi -->
@@ -37,6 +37,7 @@
                         <th>EMAIL</th>
                         <th>NOMOR PONSEL</th>
                         <th>KELAS</th>
+                        <th>AKSI</th>
                     </tr>
 
                         @foreach($data_siswa as $siswa)
@@ -52,6 +53,7 @@
                         <td>{{$siswa->email}}</td>
                         <td>{{$siswa->no_ponsel}}</td>
                         <td>{{$siswa->kelas}}</td>
+                        <td><a href="/siswa/{{$siswa->id}}/edit" class="btn btn-warning btn-sm">Edit</a></td>
                     </tr>
                         @endforeach
 
