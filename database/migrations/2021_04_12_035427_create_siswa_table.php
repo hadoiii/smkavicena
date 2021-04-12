@@ -18,6 +18,8 @@ class CreateSiswaTable extends Migration
             $table->string('nama_depan');
             $table->string('nama_belakang');
             $table->string('jenis_kelamin');
+            $table->string('tempat_lahir');
+            $table->date('tanggal_lahir');
             $table->string('agama');
             $table->string('golongan_darah');
             $table->text('alamat');
