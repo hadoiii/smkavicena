@@ -48,7 +48,10 @@
                         <td>{{$siswa->email}}</td>
                         <td>{{$siswa->no_ponsel}}</td>
                         <td>{{$siswa->kelas}}</td>
-                        <td><a href="/siswa/{{$siswa->id}}/edit" class="btn btn-warning btn-sm">Edit</a></td>
+                        <td>
+                        <a href="/siswa/{{$siswa->id}}/edit" class="btn btn-warning btn-sm">Edit</a>
+                        <a href="/siswa/{{$siswa->id}}/delete" class="btn btn-danger btn-sm" onclick="return confirm('Yakin nih mau dihapus?')">Hapus</a>
+                        </td>
                     </tr>
                         @endforeach
 
