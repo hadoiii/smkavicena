@@ -8,7 +8,7 @@
                 <div class="col-md-12">
                     <div class="panel">
                         <div class="panel-heading">
-                            <h3 class="panel-title">DATA SISWA</h3>
+                            <h3 class="panel-title">DATA GURU</h3>
                              <!-- Button trigger modal -->
                              <div class="right">
                                 <button type="button" data-toggle="modal" data-target="#exampleModal"><i class="lnr lnr-plus-circle"></i></button>
@@ -18,28 +18,28 @@
                             <table class="table table-hover">
                                 <thead>
                                     <tr>
-                                    <th>NISN</th>
+                                    <th>NIP</th>
                                     <th>NAMA DEPAN</th>
                                     <th>NAMA BELAKANG</th>
                                     <th>JENIS KELAMIN</th>
                                     <th>ALAMAT</th>
-                                    <th>KELAS</th>
+                                    <th>MATA PELAJARAN</th>
                                     <th>EMAIL</th>
                                     <th>AKSI</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                @foreach($data_siswa as $siswa)
+                                @foreach($data_guru as $guru)
                                 <tr>
-                                    <td>{{$siswa->nisn}}</td>
-                                    <td>{{$siswa->nama_depan}}</td>
-                                    <td>{{$siswa->nama_belakang}}</td>
-                                    <td>{{$siswa->jenis_kelamin}}</td>
-                                    <td>{{$siswa->alamat}}</td>
-                                    <td>{{$siswa->kelas}}</td>
-                                    <td>{{$siswa->email}}</td>
-                                    <td><a href="/siswa/{{$siswa->id_siswa}}/edit" class="btn btn-warning btn-sm">Edit</a></td>
-                                    <td><a href="/siswa/{{$siswa->id_siswa}}/delete" class="btn btn-danger btn-sm" onclick="return confirm('Yakin nih mau dihapus?')">Hapus</a></td>
+                                    <td>{{$guru->nip}}</td>
+                                    <td>{{$guru->nama_depan}}</td>
+                                    <td>{{$guru->nama_belakang}}</td>
+                                    <td>{{$guru->jenis_kelamin}}</td>
+                                    <td>{{$guru->alamat}}</td>
+                                    <td>{{$guru->mata_pelajaran}}</td>
+                                    <td>{{$guru->email}}</td>
+                                    <td><a href="/guru/{{$guru->id_guru}}/edit" class="btn btn-warning btn-sm">Edit</a></td>
+                                    <td><a href="/guru/{{$guru->id_guru}}/delete" class="btn btn-danger btn-sm" onclick="return confirm('Yakin nih mau dihapus?')">Hapus</a></td>
                                 </tr>
                                 @endforeach
                                 </tbody>
@@ -57,13 +57,13 @@
     <div class="modal-dialog">
         <div class="modal-content">
         <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">INPUT DATA SISWA</h5>
+            <h5 class="modal-title" id="exampleModalLabel">INPUT DATA GURU</h5>
             <div class="modal-body">
-            <form action="/siswa/create" method="POST" enctype="multipart/form-data">
+            <form action="/guru/create" method="POST" enctype="multipart/form-data">
             {{csrf_field()}}
                 <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">NISN</label>
-                    <input name="nisn" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="NISN">
+                    <label for="exampleInputEmail1" class="form-label">NIP</label>
+                    <input name="nip" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="NIP">
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Nama Depan</label>
@@ -101,14 +101,6 @@
                     <option value="Kong Hu Chu">Kong Hu Chu</option>
                 </select>
                 <br>
-                <select name="golongan_darah" class="form-control" aria-label="Default select example">
-                    <option selected>Golongan Darah</option>
-                    <option value="A">A</option>
-                    <option value="B">B</option>
-                    <option value="AB">AB</option>
-                    <option value="AB">O</option>
-                </select>
-                <br>
                 <div class="mb-3">
                     <label for="exampleFormControlTextarea1" class="form-label">Alamat</label>
                     <textarea name="alamat" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Alamat"></textarea>
@@ -125,49 +117,10 @@
                 </div>
                 <br>
                 <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">Kelas</label>
-                    <input name="kelas" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Kelas">
+                    <label for="exampleInputEmail1" class="form-label">ID Mata Pelajaran</label>
+                    <input name="id_mata_pelajaran" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Kelas">
                 </div>
                 <br>
-                <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">Nama Ayah</label>
-                    <input name="nama_ayah" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nama Ayah">
-                </div>
-                <br>
-                <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">Pekerjaan Ayah</label>
-                    <input name="pekerjaan_ayah" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Pekerjaan Ayah">
-                </div>
-                <br>
-                <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">Nama Ibu</label>
-                    <input name="nama_ibu" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nama Ibu">
-                </div>
-                <br>
-                <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">Pekerjaan Ibu</label>
-                    <input name="pekerjaan_ibu" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Pekerjaan Ibu">
-                </div>
-                <br>
-                <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">Nama Wali</label>
-                    <input name="nama_wali" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nama Wali">
-                </div>
-                <br>
-                <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">Nomor Darurat</label>
-                    <input name="no_darurat" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nomor Darurat">
-                </div>
-                <br>
-                <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">Sekolah Asal</label>
-                    <input name="sekolah_asal" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Sekolah Asal">
-                </div>
-                <br>
-                <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">Nomor Ijazah SMP</label>
-                    <input name="no_ijazah_smp" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nomor Ijazah SMP">
-                </div>
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

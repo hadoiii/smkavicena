@@ -27,22 +27,22 @@ class SiswaController extends Controller
         return redirect('/siswa')->with('sukses', 'Data Berhasil Di-input!');
     }
 
-    public function edit($id)
+    public function edit($id_siswa)
     {
-        $siswa = \App\Models\Siswa::find($id);
+        $siswa = \App\Models\Siswa::find($id_siswa);
         return view('siswa/edit', ['siswa' => $siswa]);
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request, $id_siswa)
     {
-        $siswa = \App\Models\Siswa::find($id);
+        $siswa = \App\Models\Siswa::find($id_siswa);
         $siswa->update($request->all());
         return redirect('/siswa')->with('sukses', 'Data Berhasil Di-update!');
     }
 
-    public function delete($id)
+    public function delete($id_siswa)
     {
-        $siswa = \App\Models\Siswa::find($id);
+        $siswa = \App\Models\Siswa::find($id_siswa);
         $siswa->delete();
         return redirect('/siswa')->with('sukses', 'Data Berhasil Dihapus!');
     }

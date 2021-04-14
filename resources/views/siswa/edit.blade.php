@@ -8,11 +8,15 @@
                 <div class="col-md-12">
                 <div class="panel">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Inputs</h3>
+                        <h3 class="panel-title">EDIT DATA SISWA</h3>
                     </div>
                     <div class="panel-body">
-                        <form action="/siswa/{{$siswa->id}}/update" method="POST">
+                        <form action="/siswa/{{$siswa->id_siswa}}/update" method="POST">
                             {{csrf_field()}}
+                                <div class="mb-3">
+                                    <label for="exampleInputEmail1" class="form-label">NISN</label>
+                                    <input name="nisn" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="NISN" value="{{$siswa->nisn}}">
+                                </div>
                                 <div class="mb-3">
                                     <label for="exampleInputEmail1" class="form-label">Nama Depan</label>
                                     <input name="nama_depan" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nama Depan" value="{{$siswa->nama_depan}}">
