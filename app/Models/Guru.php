@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Guru extends Model
 {
     protected $primaryKey = 'id_guru';
+    public $timestamps = FALSE;
     protected $table = 'guru';
     protected $fillable = [
         'nip',

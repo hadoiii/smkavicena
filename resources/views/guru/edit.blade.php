@@ -8,7 +8,7 @@
                 <div class="col-md-12">
                 <div class="panel">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Inputs</h3>
+                        <h3 class="panel-title">EDIT DATA GURU</h3>
                     </div>
                     <div class="panel-body">
                         <form action="/guru/{{$guru->id_guru}}/update" method="POST">
@@ -70,8 +70,7 @@
                                 <br>
                                 <div class="mb-3">
                                     <label for="exampleInputEmail1" class="form-label">ID Mata Pelajaran</label>
-                                    <input name="id_mata_pelajaran" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Kelas" value="{{$guru->id_mata_pelajaran}}">
-                                </div>
+                                    ...
                                 <br>
                                 </div>
                                 <div class="modal-footer">

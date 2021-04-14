@@ -36,7 +36,7 @@
                                     <td>{{$guru->nama_belakang}}</td>
                                     <td>{{$guru->jenis_kelamin}}</td>
                                     <td>{{$guru->alamat}}</td>
-                                    <td>{{$guru->mata_pelajaran}}</td>
+                                    <td>{{$guru->id_mata_pelajaran}}</td>
                                     <td>{{$guru->email}}</td>
                                     <td><a href="/guru/{{$guru->id_guru}}/edit" class="btn btn-warning btn-sm">Edit</a></td>
                                     <td><a href="/guru/{{$guru->id_guru}}/delete" class="btn btn-danger btn-sm" onclick="return confirm('Yakin nih mau dihapus?')">Hapus</a></td>
@@ -117,8 +117,12 @@
                 </div>
                 <br>
                 <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">ID Mata Pelajaran</label>
-                    <input name="id_mata_pelajaran" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Kelas">
+                <select name="id_mata_pelajaran" class="form-control" aria-label="Default select example">
+                    <option selected>Mata Pelajaran</option>
+                    @foreach($data_mapel as $mapel)
+                    <option value="{{$mapel->id_mata_pelajaran}}">{{$mapel->nama_mata_pelajaran}}</option>
+                    @endforeach
+                </select>    
                 </div>
                 <br>
         </div>

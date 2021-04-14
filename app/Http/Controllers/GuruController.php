@@ -16,9 +16,10 @@ class GuruController extends Controller
         else
         {
             $data_guru = \App\Models\Guru::all();
+            $data_mapel = \App\Models\Mapel::all();
         }
 
-        return view('guru.index', ['data_guru' => $data_guru]);
+        return view('guru.index', ['data_guru' => $data_guru], ['data_mapel' => $data_mapel]);
     }
 
     public function create(Request $request)
