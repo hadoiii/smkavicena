@@ -13,8 +13,8 @@
                     <div class="profile-header">
                         <div class="overlay"></div>
                         <div class="profile-main">
-                            <img src="{{$siswa->getAvatar()}}" width="80px" height="80px" class="img-circle" alt="Avatar">
-                            <h3 class="name">{{$siswa->nama_depan}}</h3>
+                            <img src="{{$guru->getAvatar()}}" width="80px" height="80px" class="img-circle" alt="Avatar">
+                            <h3 class="name">{{$guru->nama_depan}}</h3>
                             <span class="online-status status-available">Available</span>
                         </div>
                         <div class="profile-stat">
@@ -37,15 +37,15 @@
                         <div class="profile-info">
                             <h4 class="heading">Informasi Dasar</h4>
                             <ul class="list-unstyled list-justify">
-                                <li>NISN <span>{{$siswa->nisn}}</span></li>
-                                <li>Jenis Kelamin <span>{{$siswa->jenis_kelamin}}</span></li>
-                                <li>TTL <span>{{$siswa->tempat_lahir}}, {{$siswa->tanggal_lahir}}</span></li>
-                                <li>Email <span>{{$siswa->email}}</span></li>
-                                <li>Nomor Ponsel <span>{{$siswa->no_ponsel}}</span></li>
-                                <li>Kelas <span>{{$siswa->kelas}}</span></li>
+                                <li>NIP <span>{{$guru->nip}}</span></li>
+                                <li>Jenis Kelamin <span>{{$guru->jenis_kelamin}}</span></li>
+                                <li>TTL <span>{{$guru->tempat_lahir}}, {{$guru->tanggal_lahir}}</span></li>
+                                <li>Email <span>{{$guru->email}}</span></li>
+                                <li>Nomor Ponsel <span>{{$guru->no_ponsel}}</span></li>
+                                <li>ID Mata Pelajaran <span>{{$guru->id_mata_pelajaran}}</span></li>
                             </ul>
                         </div>
-                        <div class="text-center"><a href="/siswa/{{$siswa->id_siswa}}/edit" class="btn btn-warning">Edit Profile</a></div>
+                        <div class="text-center"><a href="/guru/{{$guru->id_guru}}/edit" class="btn btn-warning">Edit Profile</a></div>
                     </div>
                     <!-- END PROFILE DETAIL -->
                 </div>
@@ -70,68 +70,18 @@
                                         <table class="table table-hover">
                                             <tr>
                                                 <td>Agama </td>
-                                                <td>{{$siswa->agama}}</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Golongan Darah </td>
-                                                <td>{{$siswa->golongan_darah}}</td>
+                                                <td>{{$guru->agama}}</td>
                                             </tr>
                                             <tr>
                                                 <td>Alamat </td>
-                                                <td>{{$siswa->alamat}}</td>
+                                                <td>{{$guru->alamat}}</td>
                                             </tr>
-                                            <tr>
-                                                <td>Nama Ayah </td>
-                                                <td>{{$siswa->nama_ayah}}</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Pekerjaan Ayah </td>
-                                                <td>{{$siswa->pekerjaan_ayah}}</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Nama Ibu </td>
-                                                <td>{{$siswa->nama_ibu}}</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Pekerjaan Ibu </td>
-                                                <td>{{$siswa->pekerjaan_ibu}}</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Nama Wali </td>
-                                                <td>{{$siswa->nama_wali}}</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Nomor Darurat </td>
-                                                <td>{{$siswa->no_darurat}}</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Sekolah Asal </td>
-                                                <td>{{$siswa->sekolah_asal}}</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Nomor Ijazah SMP </td>
-                                                <td>{{$siswa->no_ijazah_smp}}</td>
-                                            </tr> 
-                                        
                                         </table>
                                     </div>
                                 
                             </div>
                         </div>
-                        
-                        <!--
-                        <ul class="list-unstyled list-justify">
-                            <li>Kelas <span>{{$siswa->kelas}}</span></li>
-                            <li>Nama Ayah <span>{{$siswa->nama_ayah}}</span></li>
-                            <li>Pekerjaan Ayah <span>{{$siswa->pekerjaan_ayah}}</span></li>
-                            <li>Nama Ibu <span>{{$siswa->nama_ibu}}</span></li>
-                            <li>Pekerjaan Ibu <span>{{$siswa->pekerjaan_ibu}}</span></li>
-                            <li>Nama Wali <span>{{$siswa->nama_wali}}</span></li>
-                            <li>Nomor Darurat <span>{{$siswa->no_darurat}}</span></li>
-                            <li>Sekolah Asal <span>{{$siswa->sekolah_asal}}</span></li>
-                            <li>Nomor Ijazah SMP <span>{{$siswa->no_ijazah_smp}}</span></li>
-                        </ul>
-                        -->
+                       
                         </div>
                         <div class="tab-pane fade" id="tab-bottom-left2">
                             <div class="table-responsive">

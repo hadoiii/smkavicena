@@ -24,5 +24,13 @@ class Guru extends Model
         'id_mata_pelajaran'
     ];
 
+    public function getAvatar()
+    {
+        if(!$this->avatar)
+        {
+            return asset('images/default.jpg');
+        }
+        return asset('images/'.$this->avatar);
+    }
     
 }

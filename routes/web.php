@@ -38,6 +38,7 @@ Route::group(['middleware' => 'auth'], function(){
     Route::get('/guru/{id_guru}/edit', 'GuruController@edit');
     Route::post('/guru/{id_guru}/update', 'GuruController@update');
     Route::get('/guru/{id_guru}/delete', 'GuruController@delete');
+    Route::get('/guru/{id_guru}/profile', 'GuruController@profile');
 
     /// Kumpulan Route Mata Pelajaran
     Route::get('/mapel', 'MapelController@index');

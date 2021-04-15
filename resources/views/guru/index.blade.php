@@ -32,8 +32,8 @@
                                 @foreach($data_guru as $guru)
                                 <tr>
                                     <td>{{$guru->nip}}</td>
-                                    <td>{{$guru->nama_depan}}</td>
-                                    <td>{{$guru->nama_belakang}}</td>
+                                    <td><a href="/guru/{{$guru->id_guru}}/profile">{{$guru->nama_depan}}</a></td>
+                                    <td><a href="/guru/{{$guru->id_guru}}/profile">{{$guru->nama_belakang}}</a></td>
                                     <td>{{$guru->jenis_kelamin}}</td>
                                     <td>{{$guru->alamat}}</td>
                                     <td>{{$guru->id_mata_pelajaran}}</td>

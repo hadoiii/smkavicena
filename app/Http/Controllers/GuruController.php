@@ -38,6 +38,15 @@ class GuruController extends Controller
     {
         $guru = \App\Models\Guru::find($id_guru);
         $guru->update($request->all());
+        
+        /// Peng-Upload-an Avatar
+        if($request->hasFile('avatar'))
+        {
+            $request->file('avatar')->move('images/', $request->file('avatar')->getClientOriginalName());
+            $guru->avatar = $request->file('avatar')->getClientOriginalName();
+            $guru->save();
+        }
+
         return redirect('/guru')->with('sukses', 'Data Berhasil Di-update!');
     }
 
@@ -46,5 +55,11 @@ class GuruController extends Controller
         $guru = \App\Models\Guru::find($id_guru);
         $guru->delete();
         return redirect('/guru')->with('sukses', 'Data Berhasil Dihapus!');
+    }
+
+    public function profile($id_guru)
+    {
+        $guru = \App\Models\Guru::find($id_guru);
+        return view('guru.profile', ['guru' => $guru]);
     }
 }
