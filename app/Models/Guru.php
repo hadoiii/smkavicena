@@ -23,4 +23,6 @@ class Guru extends Model
         'no_ponsel',
         'id_mata_pelajaran'
     ];
+
+    
 }

@@ -28,22 +28,22 @@ class GuruController extends Controller
         return redirect('/guru')->with('sukses', 'Data Berhasil Di-input!');
     }
 
-    public function edit($id)
+    public function edit($id_guru)
     {
-        $guru = \App\Models\Guru::find($id);
+        $guru = \App\Models\Guru::find($id_guru);
         return view('guru/edit', ['guru' => $guru]);
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request, $id_guru)
     {
-        $guru = \App\Models\Guru::find($id);
+        $guru = \App\Models\Guru::find($id_guru);
         $guru->update($request->all());
         return redirect('/guru')->with('sukses', 'Data Berhasil Di-update!');
     }
 
-    public function delete($id)
+    public function delete($id_guru)
     {
-        $guru = \App\Models\Guru::find($id);
+        $guru = \App\Models\Guru::find($id_guru);
         $guru->delete();
         return redirect('/guru')->with('sukses', 'Data Berhasil Dihapus!');
     }

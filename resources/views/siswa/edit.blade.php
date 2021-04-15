@@ -11,7 +11,7 @@
                         <h3 class="panel-title">EDIT DATA SISWA</h3>
                     </div>
                     <div class="panel-body">
-                        <form action="/siswa/{{$siswa->id_siswa}}/update" method="POST">
+                        <form action="/siswa/{{$siswa->id_siswa}}/update" method="POST" enctype="multipart/form-data">
                             {{csrf_field()}}
                                 <div class="mb-3">
                                     <label for="exampleInputEmail1" class="form-label">NISN</label>
@@ -119,6 +119,11 @@
                                 <div class="mb-3">
                                     <label for="exampleInputEmail1" class="form-label">Nomor Ijazah SMP</label>
                                     <input name="no_ijazah_smp" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nomor Ijazah SMP" value="{{$siswa->no_ijazah_smp}}">
+                                </div>
+                                <br>
+                                <div class="mb-3">
+                                    <label for="exampleInputEmail1" class="form-label">Avatar</label>
+                                    <input name="avatar" type="file" class="form-control">
                                 </div>
                             </div>
                                 <div class="modal-footer">

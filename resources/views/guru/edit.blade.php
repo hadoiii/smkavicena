@@ -68,10 +68,17 @@
                                     <input name="no_ponsel" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nomor Ponsel" value="{{$guru->no_ponsel}}">
                                 </div>
                                 <br>
+                               <!-- BELUM KETEMU SOLUSINYA
                                 <div class="mb-3">
                                     <label for="exampleInputEmail1" class="form-label">ID Mata Pelajaran</label>
-                                    ...
+                                    <select name="id_mata_pelajaran" class="form-control" aria-label="Default select example">
+                                         <option selected>Mata Pelajaran</option>
+                                            @foreach($data_mapel as $mapel)
+                                            <option value="{{$mata_pelajaran->id_mata_pelajaran}}">{{$mata_pelajaran->nama_mata_pelajaran}}</option>
+                                            @endforeach
+                                    </select>
                                 <br>
+                                -->
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

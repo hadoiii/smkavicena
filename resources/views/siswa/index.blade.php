@@ -8,7 +8,7 @@
                 <div class="col-md-12">
                     <div class="panel">
                         <div class="panel-heading">
-                            <<h3 class="panel-title">DATA SISWA</h3>
+                            <h3 class="panel-title">DATA SISWA</h3>
                              <!-- Button trigger modal -->
                              <div class="right">
                                 <button type="button" data-toggle="modal" data-target="#exampleModal"><i class="lnr lnr-plus-circle"></i></button>
@@ -32,8 +32,8 @@
                                 @foreach($data_siswa as $siswa)
                                 <tr>
                                     <td>{{$siswa->nisn}}</td>
-                                    <td>{{$siswa->nama_depan}}</td>
-                                    <td>{{$siswa->nama_belakang}}</td>
+                                    <td><a href="/siswa/{{$siswa->id_siswa}}/profile">{{$siswa->nama_depan}}</a></td>
+                                    <td><a href="/siswa/{{$siswa->id_siswa}}/profile">{{$siswa->nama_belakang}}</a></td>
                                     <td>{{$siswa->jenis_kelamin}}</td>
                                     <td>{{$siswa->alamat}}</td>
                                     <td>{{$siswa->kelas}}</td>

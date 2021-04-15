@@ -29,6 +29,21 @@ class Siswa extends Model
         'nama_wali',
         'no_darurat',
         'sekolah_asal',
-        'no_ijazah_smp'
+        'no_ijazah_smp',
+        'avatar'
     ];
+
+    public function getAvatar()
+    {
+        if(!$this->avatar)
+        {
+            return asset('images/default.jpg');
+        }
+        return asset('images/'.$this->avatar);
+    }
+
+    public function kelas()
+    {
+        return $this->belongsTo(Mapel::class);
+    }
 }

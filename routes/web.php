@@ -30,6 +30,7 @@ Route::group(['middleware' => 'auth'], function(){
     Route::get('/siswa/{id_siswa}/edit', 'SiswaController@edit');
     Route::post('/siswa/{id_siswa}/update', 'SiswaController@update');
     Route::get('/siswa/{id_siswa}/delete', 'SiswaController@delete');
+    Route::get('/siswa/{id_siswa}/profile', 'SiswaController@profile');
 
     /// Kumpulan Route Guru
     Route::get('/guru', 'GuruController@index');
