@@ -11,6 +11,7 @@ class Guru extends Model
     public $timestamps = FALSE;
     protected $table = 'guru';
     protected $fillable = [
+        'user_id',
         'nip',
         'nama_depan',
         'nama_belakang',

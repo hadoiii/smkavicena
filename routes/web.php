@@ -21,9 +21,8 @@ Route::get('/login', 'AuthController@login')->name('login');
 Route::post('/postlogin', 'AuthController@postlogin');
 Route::get('/logout', 'AuthController@logout');
 
-Route::group(['middleware' => 'auth'], function(){
-    Route::get('/dashboard', 'DashboardController@index')->middleware('auth');
-
+/// ROUTE YANG HANYA BISA DIAKSES OLEH ADMIN
+Route::group(['middleware' => ['auth', 'checkRole:admin']], function(){
     /// Kumpulan Route Siswa
     Route::get('/siswa', 'SiswaController@index');
     Route::post('/siswa/create', 'SiswaController@create');
@@ -39,6 +38,12 @@ Route::group(['middleware' => 'auth'], function(){
     Route::post('/guru/{id_guru}/update', 'GuruController@update');
     Route::get('/guru/{id_guru}/delete', 'GuruController@delete');
     Route::get('/guru/{id_guru}/profile', 'GuruController@profile');
+
+});
+
+/// ROUTE YANG BISA DIAKSES OLEH SIAPAPUN
+Route::group(['middleware' => ['auth', 'checkRole:admin,siswa,guru']], function(){
+    Route::get('/dashboard', 'DashboardController@index');
 
     /// Kumpulan Route Mata Pelajaran
     Route::get('/mapel', 'MapelController@index');
