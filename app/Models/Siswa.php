@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Siswa extends Model
 {
-    protected $primaryKey = 'id_siswa';
+    
     protected $table = 'siswa';
     protected $fillable = [
         'nisn',
@@ -43,8 +43,9 @@ class Siswa extends Model
         return asset('images/'.$this->avatar);
     }
 
-    public function kelas()
+    
+    public function mapel()
     {
-        return $this->belongsTo(Mapel::class);
+        return $this->belongsToMany(Mapel::class)->withPivot('nilai');
     }
 }

@@ -40,15 +40,15 @@ class GuruController extends Controller
         return redirect('/guru')->with('sukses', 'Data Berhasil Di-input!');
     }
 
-    public function edit($id_guru)
+    public function edit($id)
     {
-        $guru = \App\Models\Guru::find($id_guru);
+        $guru = \App\Models\Guru::find($id);
         return view('guru/edit', ['guru' => $guru]);
     }
 
-    public function update(Request $request, $id_guru)
+    public function update(Request $request, $id)
     {
-        $guru = \App\Models\Guru::find($id_guru);
+        $guru = \App\Models\Guru::find($id);
         $guru->update($request->all());
         
         /// Peng-Upload-an Avatar
@@ -62,16 +62,16 @@ class GuruController extends Controller
         return redirect('/guru')->with('sukses', 'Data Berhasil Di-update!');
     }
 
-    public function delete($id_guru)
+    public function delete($id)
     {
-        $guru = \App\Models\Guru::find($id_guru);
+        $guru = \App\Models\Guru::find($id);
         $guru->delete();
         return redirect('/guru')->with('sukses', 'Data Berhasil Dihapus!');
     }
 
-    public function profile($id_guru)
+    public function profile($id)
     {
-        $guru = \App\Models\Guru::find($id_guru);
+        $guru = \App\Models\Guru::find($id);
         return view('guru.profile', ['guru' => $guru]);
     }
 }

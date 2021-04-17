@@ -7,12 +7,17 @@ use Illuminate\Database\Eloquent\Model;
 
 class Mapel extends Model
 {
-    protected $primaryKey = 'id_mata_pelajaran';
+    
     public $timestamps = FALSE;
-    protected $table = 'mata_pelajaran';
+    protected $table = 'mapel';
     protected $fillable = [
-        'id_mata_pelajaran',
-        'nama_mata_pelajaran'
+        'kode',
+        'nama',
+        'semester'
         ];
+    public function siswa()
+    {
+        return $this->belongsToMany(Siswa::class)->withPivot('nilai');
+    }
     
 }

@@ -26,18 +26,18 @@ Route::group(['middleware' => ['auth', 'checkRole:admin']], function(){
     /// Kumpulan Route Siswa
     Route::get('/siswa', 'SiswaController@index');
     Route::post('/siswa/create', 'SiswaController@create');
-    Route::get('/siswa/{id_siswa}/edit', 'SiswaController@edit');
-    Route::post('/siswa/{id_siswa}/update', 'SiswaController@update');
-    Route::get('/siswa/{id_siswa}/delete', 'SiswaController@delete');
-    Route::get('/siswa/{id_siswa}/profile', 'SiswaController@profile');
+    Route::get('/siswa/{id}/edit', 'SiswaController@edit');
+    Route::post('/siswa/{id}/update', 'SiswaController@update');
+    Route::get('/siswa/{id}/delete', 'SiswaController@delete');
+    Route::get('/siswa/{id}/profile', 'SiswaController@profile');
 
     /// Kumpulan Route Guru
     Route::get('/guru', 'GuruController@index');
     Route::post('/guru/create', 'GuruController@create');
-    Route::get('/guru/{id_guru}/edit', 'GuruController@edit');
-    Route::post('/guru/{id_guru}/update', 'GuruController@update');
-    Route::get('/guru/{id_guru}/delete', 'GuruController@delete');
-    Route::get('/guru/{id_guru}/profile', 'GuruController@profile');
+    Route::get('/guru/{id}/edit', 'GuruController@edit');
+    Route::post('/guru/{id}/update', 'GuruController@update');
+    Route::get('/guru/{id}/delete', 'GuruController@delete');
+    Route::get('/guru/{id}/profile', 'GuruController@profile');
 
 });
 
@@ -48,7 +48,7 @@ Route::group(['middleware' => ['auth', 'checkRole:admin,siswa,guru']], function(
     /// Kumpulan Route Mata Pelajaran
     Route::get('/mapel', 'MapelController@index');
     Route::post('/mapel/create', 'MapelController@create');
-    Route::get('/mapel/{id_mata_pelajaran}/edit', 'MapelController@edit');
-    Route::post('/mapel/{id_mata_pelajaran}/update', 'MapelController@update');
-    Route::get('/mapel/{id_mata_pelajaran}/delete', 'MapelController@delete');
+    Route::get('/mapel/{id}/edit', 'MapelController@edit');
+    Route::post('/mapel/{id}/update', 'MapelController@update');
+    Route::get('/mapel/{id}/delete', 'MapelController@delete');
 });

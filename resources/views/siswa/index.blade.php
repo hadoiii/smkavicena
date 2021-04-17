@@ -32,14 +32,14 @@
                                 @foreach($data_siswa as $siswa)
                                 <tr>
                                     <td>{{$siswa->nisn}}</td>
-                                    <td><a href="/siswa/{{$siswa->id_siswa}}/profile">{{$siswa->nama_depan}}</a></td>
-                                    <td><a href="/siswa/{{$siswa->id_siswa}}/profile">{{$siswa->nama_belakang}}</a></td>
+                                    <td><a href="/siswa/{{$siswa->id}}/profile">{{$siswa->nama_depan}}</a></td>
+                                    <td><a href="/siswa/{{$siswa->id}}/profile">{{$siswa->nama_belakang}}</a></td>
                                     <td>{{$siswa->jenis_kelamin}}</td>
                                     <td>{{$siswa->alamat}}</td>
                                     <td>{{$siswa->kelas}}</td>
                                     <td>{{$siswa->email}}</td>
-                                    <td><a href="/siswa/{{$siswa->id_siswa}}/edit" class="btn btn-warning btn-sm">Edit</a></td>
-                                    <td><a href="/siswa/{{$siswa->id_siswa}}/delete" class="btn btn-danger btn-sm" onclick="return confirm('Yakin nih mau dihapus?')">Hapus</a></td>
+                                    <td><a href="/siswa/{{$siswa->id}}/edit" class="btn btn-warning btn-sm">Edit</a></td>
+                                    <td><a href="/siswa/{{$siswa->id}}/delete" class="btn btn-danger btn-sm" onclick="return confirm('Yakin nih mau dihapus?')">Hapus</a></td>
                                 </tr>
                                 @endforeach
                                 </tbody>

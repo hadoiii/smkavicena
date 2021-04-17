@@ -11,7 +11,7 @@
                         <h3 class="panel-title">EDIT DATA SISWA</h3>
                     </div>
                     <div class="panel-body">
-                        <form action="/siswa/{{$siswa->id_siswa}}/update" method="POST" enctype="multipart/form-data">
+                        <form action="/siswa/{{$siswa->id}}/update" method="POST" enctype="multipart/form-data">
                             {{csrf_field()}}
                                 <div class="mb-3">
                                     <label for="exampleInputEmail1" class="form-label">NISN</label>

@@ -40,15 +40,15 @@ class SiswaController extends Controller
         return redirect('/siswa')->with('sukses', 'Data Berhasil Di-input!');
     }
 
-    public function edit($id_siswa)
+    public function edit($id)
     {
-        $siswa = \App\Models\Siswa::find($id_siswa);
+        $siswa = \App\Models\Siswa::find($id);
         return view('siswa/edit', ['siswa' => $siswa]);
     }
 
-    public function update(Request $request, $id_siswa)
+    public function update(Request $request, $id)
     {
-        $siswa = \App\Models\Siswa::find($id_siswa);
+        $siswa = \App\Models\Siswa::find($id);
         $siswa->update($request->all());
         if($request->hasFile('avatar'))
         {
@@ -59,16 +59,16 @@ class SiswaController extends Controller
         return redirect('/siswa')->with('sukses', 'Data Berhasil Di-update!');
     }
 
-    public function delete($id_siswa)
+    public function delete($id)
     {
-        $siswa = \App\Models\Siswa::find($id_siswa);
+        $siswa = \App\Models\Siswa::find($id);
         $siswa->delete();
         return redirect('/siswa')->with('sukses', 'Data Berhasil Dihapus!');
     }
 
-    public function profile($id_siswa)
+    public function profile($id)
     {
-        $siswa = \App\Models\Siswa::find($id_siswa);
+        $siswa = \App\Models\Siswa::find($id);
         return view('siswa.profile', ['siswa' => $siswa]);
     }
 }

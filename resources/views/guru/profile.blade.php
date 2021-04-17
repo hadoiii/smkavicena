@@ -42,10 +42,9 @@
                                 <li>TTL <span>{{$guru->tempat_lahir}}, {{$guru->tanggal_lahir}}</span></li>
                                 <li>Email <span>{{$guru->email}}</span></li>
                                 <li>Nomor Ponsel <span>{{$guru->no_ponsel}}</span></li>
-                                <li>ID Mata Pelajaran <span>{{$guru->id_mata_pelajaran}}</span></li>
                             </ul>
                         </div>
-                        <div class="text-center"><a href="/guru/{{$guru->id_guru}}/edit" class="btn btn-warning">Edit Profile</a></div>
+                        <div class="text-center"><a href="/guru/{{$guru->id}}/edit" class="btn btn-warning">Edit Profile</a></div>
                     </div>
                     <!-- END PROFILE DETAIL -->
                 </div>

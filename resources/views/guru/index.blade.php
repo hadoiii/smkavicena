@@ -32,14 +32,14 @@
                                 @foreach($data_guru as $guru)
                                 <tr>
                                     <td>{{$guru->nip}}</td>
-                                    <td><a href="/guru/{{$guru->id_guru}}/profile">{{$guru->nama_depan}}</a></td>
-                                    <td><a href="/guru/{{$guru->id_guru}}/profile">{{$guru->nama_belakang}}</a></td>
+                                    <td><a href="/guru/{{$guru->id}}/profile">{{$guru->nama_depan}}</a></td>
+                                    <td><a href="/guru/{{$guru->id}}/profile">{{$guru->nama_belakang}}</a></td>
                                     <td>{{$guru->jenis_kelamin}}</td>
                                     <td>{{$guru->alamat}}</td>
                                     <td>{{$guru->id_mata_pelajaran}}</td>
                                     <td>{{$guru->email}}</td>
-                                    <td><a href="/guru/{{$guru->id_guru}}/edit" class="btn btn-warning btn-sm">Edit</a></td>
-                                    <td><a href="/guru/{{$guru->id_guru}}/delete" class="btn btn-danger btn-sm" onclick="return confirm('Yakin nih mau dihapus?')">Hapus</a></td>
+                                    <td><a href="/guru/{{$guru->id}}/edit" class="btn btn-warning btn-sm">Edit</a></td>
+                                    <td><a href="/guru/{{$guru->id}}/delete" class="btn btn-danger btn-sm" onclick="return confirm('Yakin nih mau dihapus?')">Hapus</a></td>
                                 </tr>
                                 @endforeach
                                 </tbody>
@@ -116,6 +116,7 @@
                     <input name="no_ponsel" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nomor Ponsel">
                 </div>
                 <br>
+                <!-- DINONAKTIFKAN UNTUK SEMENTARA
                 <div class="mb-3">
                 <select name="id_mata_pelajaran" class="form-control" aria-label="Default select example">
                     <option selected>Mata Pelajaran</option>
@@ -125,6 +126,7 @@
                 </select>    
                 </div>
                 <br>
+                -->
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

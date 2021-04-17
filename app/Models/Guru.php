@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Guru extends Model
 {
-    protected $primaryKey = 'id_guru';
+    
     public $timestamps = FALSE;
     protected $table = 'guru';
     protected $fillable = [
@@ -21,8 +21,7 @@ class Guru extends Model
         'agama',
         'alamat',
         'email',
-        'no_ponsel',
-        'id_mata_pelajaran'
+        'no_ponsel'
     ];
 
     public function getAvatar()

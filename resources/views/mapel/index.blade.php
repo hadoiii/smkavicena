@@ -20,16 +20,18 @@
                                     <tr>
                                     <th>KODE MATA PELAJARAN</th>
                                     <th>NAMA MATA PELAJARAN</th>
+                                    <th>SEMESTER</th>
                                     <th>AKSI</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                 @foreach($data_mapel as $mapel)
                                 <tr>
-                                    <td>{{$mapel->id_mata_pelajaran}}</td>
-                                    <td>{{$mapel->nama_mata_pelajaran}}</td>
-                                    <td><a href="/mapel/{{$mapel->id_mata_pelajaran}}/edit" class="btn btn-warning btn-sm">Edit</a></td>
-                                    <td><a href="/mapel/{{$mapel->id_mata_pelajaran}}/delete" class="btn btn-danger btn-sm" onclick="return confirm('Yakin nih mau dihapus?')">Hapus</a></td>
+                                    <td>{{$mapel->kode}}</td>
+                                    <td>{{$mapel->nama}}</td>
+                                    <td>{{$mapel->semester}}</td>
+                                    <td><a href="/mapel/{{$mapel->id}}/edit" class="btn btn-warning btn-sm">Edit</a></td>
+                                    <td><a href="/mapel/{{$mapel->id}}/delete" class="btn btn-danger btn-sm" onclick="return confirm('Yakin nih mau dihapus?')">Hapus</a></td>
                                 </tr>
                                 @endforeach
                                 </tbody>
@@ -53,11 +55,17 @@
             {{csrf_field()}}
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">KODE MATA PELAJARAN</label>
-                    <input name="id_mata_pelajaran" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="NISN">
+                    <input name="kode" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Kode Mata Pelajaran">
                 </div>
+                <br>
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">NAMA MATA PELAJARAN</label>
-                    <input name="nama_mata_pelajaran" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nama Depan">
+                    <input name="nama" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nama Mata Pelajaran">
+                </div>
+                <br>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">SEMESTER</label>
+                    <input name="semester" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Semester">
                 </div>
                 <br>
         </div>
