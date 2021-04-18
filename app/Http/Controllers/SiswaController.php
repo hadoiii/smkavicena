@@ -9,6 +9,7 @@ class SiswaController extends Controller
 {
     public function index(Request $request)
     {
+        
         /// Fitur Pencarian Pada Navbar
         if($request->has('cari'))
         {
@@ -24,6 +25,28 @@ class SiswaController extends Controller
 
     public function create(Request $request)
     {
+        /// VALIDASI INPUT
+        $this->validate($request,[
+            'nisn' => 'required|unique:siswa',
+            'nama_depan' => 'required|min:5',
+            'jenis_kelamin' => 'required',
+            'tempat_lahir' => 'required',
+            'tanggal_lahir' => 'required',
+            'agama' => 'required',
+            'golongan_darah' => 'required',
+            'alamat' => 'required',
+            'email' => 'required|email|unique:siswa',
+            'no_ponsel' => 'required',
+            'nama_ayah' => 'required',
+            'pekerjaan_ayah' => 'required',
+            'nama_ibu' => 'required',
+            'pekerjaan_ibu' => 'required',
+            'no_darurat' => 'required',
+            'sekolah_asal' => 'required',
+            'no_ijazah_smp' => 'required',
+            'avatar' => 'mimes:jpg,png',
+        ]);
+
         /// INSERT KE TABEL USER
         $user = new \App\Models\User;
         $user->role = 'siswa';
@@ -37,6 +60,13 @@ class SiswaController extends Controller
         $request->request->add(['user_id' => $user->id]);
         $siswa = \App\Models\Siswa::create($request->all());
         
+        /// MENG-UPLOAD AVATAR DI INDEX SISWA
+        if($request->hasFile('avatar'))
+        {
+            $request->file('avatar')->move('images/', $request->file('avatar')->getClientOriginalName());
+            $siswa->avatar = $request->file('avatar')->getClientOriginalName();
+            $siswa->save();
+        } 
         return redirect('/siswa')->with('sukses', 'Data Berhasil Di-input!');
     }
 
@@ -50,6 +80,8 @@ class SiswaController extends Controller
     {
         $siswa = \App\Models\Siswa::find($id);
         $siswa->update($request->all());
+        
+        /// MENG-UPLOAD AVATAR DI EDIT SISWA
         if($request->hasFile('avatar'))
         {
             $request->file('avatar')->move('images/', $request->file('avatar')->getClientOriginalName());
