@@ -101,6 +101,20 @@ class SiswaController extends Controller
     public function profile($id)
     {
         $siswa = \App\Models\Siswa::find($id);
-        return view('siswa.profile', ['siswa' => $siswa]);
+        $matapelajaran = \App\Models\Mapel::all();
+        return view('siswa.profile', ['siswa' => $siswa, 'matapelajaran' => $matapelajaran]);
+    }
+
+    public function addnilai(Request $request, $idsiswa)
+    {
+        $siswa = \App\Models\Siswa::find($idsiswa);
+        /// Pengecekan, apakah nilai mata pelajaran sudah terisi sebelumnya?
+        if($siswa->mapel()->where('mapel_id', $request->mapel)->exists())
+        {
+            return redirect('siswa/'.$idsiswa.'/profile')->with('error', 'Data nilai sudah ada!');
+        }
+        $siswa->mapel()->attach($request->mapel, ['nilai' => $request->nilai]);
+
+        return redirect('siswa/'.$idsiswa.'/profile')->with('sukses', 'Data nilai berhasil di-input!');
     }
 }

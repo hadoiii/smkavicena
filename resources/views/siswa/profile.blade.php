@@ -5,6 +5,18 @@
 <!-- MAIN CONTENT -->
 <div class="main-content">
     <div class="container-fluid">
+    <!-- NOTIFIKASI KEBERHASILAN INPUT -->
+        @if(session('sukses'))
+            <div class="alert alert-success" role="alert">
+                {{session('sukses')}}
+            </div>
+        @endif
+        @if(session('error'))
+            <div class="alert alert-danger" role="alert">
+                {{session('error')}}
+            </div>
+        @endif
+    <!-- AKHIR NOTIFIKASI -->
         <div class="panel panel-profile">
             <div class="clearfix">
                 <!-- LEFT COLUMN -->
@@ -122,6 +134,10 @@
 
                         </div>
                         <div class="tab-pane fade" id="tab-bottom-left2">
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                        TAMBAH NILAI
+                        </button>
                         <div class="panel">
 								<div class="panel-heading">
 									<h3 class="panel-title">Informasi Nilai</h3>
@@ -159,5 +175,43 @@
     </div>
 </div>
 <!-- END MAIN CONTENT -->
+</div>
+<!-- Modal Form Pengisian Nilai -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">TAMBAH NILAI</h5>
+    </div>
+      <div class="modal-body">
+      <form action="/siswa/{{$siswa->id}}/addnilai" method="POST" enctype="multipart/form-data">
+        {{csrf_field()}}
+            <div class="mb-3">
+            <div class="form-group">
+                <label for="exampleInputEmail1" class="form-label">Mata Pelajaran</label>
+                <select name="mapel" class="form-control" id="mapel" aria-label="Default select example">
+                    @foreach($matapelajaran as $mp)
+                    <option value="{{$mp->id}}">{{$mp->nama}}</option>
+                    @endforeach
+                </select>
+            </div>
+            </div>
+            <div class="mb-3">
+            <div class="form-group{{$errors->has('nilai') ? ' has-error' : ''}}">
+                <label for="exampleInputEmail1" class="form-label">Nilai</label>
+                <input name="nilai" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nilai" value="{{old('nilai')}}">
+                @if($errors->has('nilai'))
+                <span class="help-block">{{$errors->first('nilai')}}</span>
+                @endif
+            </div>
+            </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-close btn-secondary" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Simpan</button>
+        </form>
+      </div>
+    </div>
+  </div>
 </div>
 @stop
