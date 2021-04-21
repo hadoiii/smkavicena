@@ -55,16 +55,13 @@
                     <div class="custom-tabs-line tabs-line-bottom left-aligned">
                         <ul class="nav" role="tablist">
                             <li class="active"><a href="#tab-bottom-left1" role="tab" data-toggle="tab" aria-expanded="true">Informasi Lengkap</a></li>
-                            <li class=""><a href="#tab-bottom-left2" role="tab" data-toggle="tab" aria-expanded="false">Projects <span class="badge">7</span></a></li>
+                            <li class=""><a href="#tab-bottom-left2" role="tab" data-toggle="tab" aria-expanded="false">Mata Pelajaran Yang Diajar<span class="badge">7</span></a></li>
                         </ul>
                     </div>
                     <div class="tab-content">
                         <div class="tab-pane fade active in" id="tab-bottom-left1">
-                        
                         <div class="row">
-                            <div class="panel">
-                                
-                                    
+                            <div class="panel"> 
                                     <div class="panel-body">
                                         <table class="table table-hover">
                                             <tr>
@@ -83,92 +80,32 @@
                        
                         </div>
                         <div class="tab-pane fade" id="tab-bottom-left2">
-                            <div class="table-responsive">
-                                <table class="table project-table">
-                                    <thead>
-                                        <tr>
-                                            <th>Title</th>
-                                            <th>Progress</th>
-                                            <th>Leader</th>
-                                            <th>Status</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td><a href="#">Spot Media</a></td>
-                                            <td>
-                                                <div class="progress">
-                                                    <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-                                                        <span>60% Complete</span>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td><img src="assets/img/user2.png" alt="Avatar" class="avatar img-circle"> <a href="#">Michael</a></td>
-                                            <td><span class="label label-success">ACTIVE</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td><a href="#">E-Commerce Site</a></td>
-                                            <td>
-                                                <div class="progress">
-                                                    <div class="progress-bar" role="progressbar" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100" style="width: 33%;">
-                                                        <span>33% Complete</span>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td><img src="assets/img/user1.png" alt="Avatar" class="avatar img-circle"> <a href="#">Antonius</a></td>
-                                            <td><span class="label label-warning">PENDING</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td><a href="#">Project 123GO</a></td>
-                                            <td>
-                                                <div class="progress">
-                                                    <div class="progress-bar" role="progressbar" aria-valuenow="68" aria-valuemin="0" aria-valuemax="100" style="width: 68%;">
-                                                        <span>68% Complete</span>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td><img src="assets/img/user1.png" alt="Avatar" class="avatar img-circle"> <a href="#">Antonius</a></td>
-                                            <td><span class="label label-success">ACTIVE</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td><a href="#">Wordpress Theme</a></td>
-                                            <td>
-                                                <div class="progress">
-                                                    <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%;">
-                                                        <span>75%</span>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td><img src="assets/img/user2.png" alt="Avatar" class="avatar img-circle"> <a href="#">Michael</a></td>
-                                            <td><span class="label label-success">ACTIVE</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td><a href="#">Project 123GO</a></td>
-                                            <td>
-                                                <div class="progress">
-                                                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">
-                                                        <span>100%</span>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td><img src="assets/img/user1.png" alt="Avatar" class="avatar img-circle"> <a href="#">Antonius</a></td>
-                                            <td><span class="label label-default">CLOSED</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td><a href="#">Redesign Landing Page</a></td>
-                                            <td>
-                                                <div class="progress">
-                                                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">
-                                                        <span>100%</span>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td><img src="assets/img/user5.png" alt="Avatar" class="avatar img-circle"> <a href="#">Jason</a></td>
-                                            <td><span class="label label-default">CLOSED</span></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
+                            <div class="panel">
+								<div class="panel-body">
+									<table class="table table-striped">
+										<thead>
+											<tr>
+												<th>KODE</th>
+												<th>MATA PELAJARAN</th>
+												<th>SEMESTER</th>
+											</tr>
+										</thead>
+										<tbody>
+                                        @foreach($guru->mapel as $mapel)
+											<tr>
+												<td>{{$mapel->kode}}</td>
+												<td>{{$mapel->nama}}</td>
+												<td>{{$mapel->semester}}</td>
+											</tr>
+                                        @endforeach
+										</tbody>
+									</table>
+								</div>
+							</div>
+                            <!-- Menampilkan Grafik Nilai Siswa -->
+                            <div class="panel">
+                            <div id="chartNilai"></div>
+                        </div>
                         </div>
                     </div>
                     <!-- END TABBED CONTENT -->
