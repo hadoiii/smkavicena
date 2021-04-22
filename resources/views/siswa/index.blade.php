@@ -11,6 +11,8 @@
                             <h3 class="panel-title">DATA SISWA</h3>
                              <!-- Button trigger modal -->
                              <div class="right">
+                             <a href="/siswa/exportexcel" class="btn btn-primary btn-sm">Export XLS</a>
+                             <a href="/siswa/exportpdf" class="btn btn-primary btn-sm">Export PDF</a>
                                 <button type="button" data-toggle="modal" data-target="#exampleModal"><i class="lnr lnr-plus-circle"></i></button>
                             </div>
                         </div>
