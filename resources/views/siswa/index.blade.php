@@ -23,8 +23,8 @@
                                     <th>NAMA BELAKANG</th>
                                     <th>JENIS KELAMIN</th>
                                     <th>ALAMAT</th>
-                                    <th>KELAS</th>
                                     <th>EMAIL</th>
+                                    <th>RERATA NILAI</th>
                                     <th>AKSI</th>
                                     </tr>
                                 </thead>
@@ -36,8 +36,8 @@
                                     <td><a href="/siswa/{{$siswa->id}}/profile">{{$siswa->nama_belakang}}</a></td>
                                     <td>{{$siswa->jenis_kelamin}}</td>
                                     <td>{{$siswa->alamat}}</td>
-                                    <td>{{$siswa->kelas}}</td>
                                     <td>{{$siswa->email}}</td>
+                                    <td>{{$siswa->rataRataNilai()}}</td>
                                     <td><a href="/siswa/{{$siswa->id}}/edit" class="btn btn-warning btn-sm">Edit</a></td>
                                     <td><a href="/siswa/{{$siswa->id}}/delete" class="btn btn-danger btn-sm" onclick="return confirm('Yakin nih mau dihapus?')">Hapus</a></td>
                                 </tr>
