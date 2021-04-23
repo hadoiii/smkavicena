@@ -37,21 +37,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			</div>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav pull-right mainNav">
-					<li class="active"><a href="index.html">Home</a></li>
+					<li class="active"><a href="/">Home</a></li>
 					<li><a href="/about">About</a></li>
-					<li><a href="courses.html">Courses</a></li>
-					<li><a href="price.html">Price</a></li>
-					<li><a href="videos.html">Videos</a></li>
-					<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages <b class="caret"></b></a>
-						<ul class="dropdown-menu">
-							<li><a href="sidebar-right.html">Right Sidebar</a></li>
-							<li><a href="#">Dummy Link1</a></li>
-							<li><a href="#">Dummy Link2</a></li>
-							<li><a href="#">Dummy Link3</a></li>
-						</ul>
-					</li>
-					<li><a href="contact.html">Contact</a></li>
+					<li><a href="#">Contact Us</a></li>
+                    <li><a href="/register">Register</a></li>
+                    
 
 				</ul>
 			</div>
