@@ -41,7 +41,7 @@
                                     <td>{{$siswa->email}}</td>
                                     <td>{{$siswa->rataRataNilai()}}</td>
                                     <td><a href="/siswa/{{$siswa->id}}/edit" class="btn btn-warning btn-sm">Edit</a></td>
-                                    <td><a href="#" class="btn btn-danger btn-sm class" siswa-id="{{$siswa->id}}">Hapus</a></td>
+                                    <td><a href="#" class="btn btn-danger btn-sm class delete" siswa-id="{{$siswa->id}}">Hapus</a></td>
                                 </tr>
                                 @endforeach
                                 </tbody>
