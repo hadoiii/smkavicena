@@ -12,6 +12,8 @@
 	<link rel="stylesheet" href="{{asset('admin/assets/vendor/linearicons/style.css')}}">
 	<!-- MAIN CSS -->
 	<link rel="stylesheet" href="{{asset('admin/assets/css/main.css')}}">
+	<!-- TOASTR -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 	<!-- FOR DEMO PURPOSES ONLY. You should remove this in your project -->
 	<link rel="stylesheet" href="{{asset('admin/assets/css/demo.css')}}">
 	<!-- GOOGLE FONTS -->
@@ -48,6 +50,14 @@
 	<script src="{{asset('admin/assets/vendor/bootstrap/js/bootstrap.min.js')}}"></script>
 	<script src="{{asset('admin/assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js')}}"></script>
 	<script src="{{asset('admin/assets/scripts/klorofil-common.js')}}"></script>
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+	<!-- Notifikasi TOASTR -->
+	<script>
+	@if(Session::has('sukses'))
+		toastr.success("{{Session::get('sukses')}}", "Sukses!")
+	@endif
+	</script>
 	@yield('footer')
 	</body>
 
