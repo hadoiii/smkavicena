@@ -18,6 +18,7 @@ Route::get('/register', 'SiteController@register');
 Route::post('/postregister', 'SiteController@postregister');
 Route::get('/about', 'SiteController@about');
 
+
 Route::get('/login', 'AuthController@login')->name('login');
 Route::post('/postlogin', 'AuthController@postlogin');
 Route::get('/logout', 'AuthController@logout');
@@ -44,6 +45,9 @@ Route::group(['middleware' => ['auth', 'checkRole:admin']], function(){
     Route::get('/guru/{id}/delete', 'GuruController@delete');
     Route::get('/guru/{id}/profile', 'GuruController@profile');
 
+    /// Kumpulan Route Postingan
+    Route::get('/posts', 'PostController@index');
+
 });
 
 /// ROUTE YANG BISA DIAKSES OLEH SIAPAPUN
@@ -57,3 +61,8 @@ Route::group(['middleware' => ['auth', 'checkRole:admin,siswa,guru']], function(
     Route::post('/mapel/{id}/update', 'MapelController@update');
     Route::get('/mapel/{id}/delete', 'MapelController@delete');
 });
+
+Route::get('/{slug}', [
+    'uses' => 'SiteController@singlepost',
+    'as' => 'site.single.post'
+]);

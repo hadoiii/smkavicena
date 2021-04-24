@@ -1,6 +1,13 @@
 @extends('layouts.frontend')
 
 @section('content')
+<header id="head" class="secondary">
+    <div class="container">
+        <h1>Registrasi</h1>
+        <p>Satu langkah lagi bagi Anda untuk bergabung bersama kami, meraih masa depan gemilang Anda!</p>
+    </div>
+</header>
+
 <div class="container">
     <div class="row">
         <div class="col-md-10">

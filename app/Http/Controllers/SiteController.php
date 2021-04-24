@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use App\Models\Post;
 
 class SiteController extends Controller
 {
@@ -38,5 +39,11 @@ class SiteController extends Controller
         $siswa = \App\Models\Siswa::create($request->all());
 
         return redirect('/login')->with('sukses', 'Pendaftaran Berhasil!');
+    }
+
+    public function singlepost($slug)
+    {
+        $post = Post::where('slug', '=', $slug)->first();
+        return view('sites.singlepost', compact(['post']));
     }
 }
