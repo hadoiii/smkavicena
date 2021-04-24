@@ -37,6 +37,6 @@ class SiteController extends Controller
         $request->request->add(['user_id' => $user->id]);
         $siswa = \App\Models\Siswa::create($request->all());
 
-        return redirect('/')->with('sukses', 'Pendaftaran Berhasil!');
+        return redirect('/login')->with('sukses', 'Pendaftaran Berhasil!');
     }
 }

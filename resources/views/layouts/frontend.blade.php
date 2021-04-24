@@ -11,7 +11,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="free-educational-responsive-web-template-webEdu">
 	<meta name="author" content="webThemez.com">
-	<title>SMK Avicena Tenjo</title>
+	<title>{{config('sekolah.title')}}</title>
 	<link rel="favicon" href="{{asset('frontend/images/favicon.png')}}">
 	<link rel="stylesheet" media="screen" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
 	<link rel="stylesheet" href="{{asset('frontend/css/bootstrap.min.css')}}">
@@ -40,7 +40,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<li class="active"><a href="/">Home</a></li>
 					<li><a href="/about">About</a></li>
 					<li><a href="#">Contact Us</a></li>
-                    <li><a href="/register">Register</a></li>
+          <li><a href="/register">Register</a></li>
+          <li><a href="/login">Login</a></li>
                     
 
 				</ul>
@@ -54,8 +55,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<header id="head">
 		<div class="container">
              <div class="heading-text">							
-							<h1 class="animated flipInY delay1">Start Online Education</h1>
-							<p>Free Online education template for elearning and online education institute.</p>
+							<h1 class="animated flipInY delay1">{{config('sekolah.welcome_message')}}</h1>
+							<p>{{config('sekolah.welcome_message2')}}</p>
 						</div>
             
 					<div class="fluid_container">                       

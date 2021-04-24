@@ -8,10 +8,9 @@
                 <div class="icon-box-top grey-box-icon-pos">
                     <img src="{{asset('frontend/images/1.png')}}" alt="" />
                 </div><!--icon box top -->
-                <h4>Online Courses</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent tempus eleifend risus ut congue
-                eset nec lacus elit dor broma.</p>
-                <p><a href="#"><em>Read More</em></a></p>
+                <h4>{{config('sekolah.home_feature_column_1_title')}}</h4>
+                <p>{{config('sekolah.home_feature_column_1_content')}}</p>
+                <p><a href="#"><em>{{config('sekolah.home_feature_column_1_link_text')}} →</em></a></p>
             </div><!--grey box -->
         </div><!--/span3-->
         <div class="col-md-3">
@@ -19,10 +18,9 @@
                 <div class="icon-box-top grey-box-icon-pos">
                     <img src="{{asset('frontend/images/2.png')}}" alt="" />
                 </div><!--icon box top -->
-                <h4>Meet our Staff</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent tempus eleifend risus ut congue
-                eset nec lacus elit dor broma.</p>
-                <p><a href="#"><em>Read More</em></a></p>
+                <h4>{{config('sekolah.home_feature_column_2_title')}}</h4>
+                <p>{{config('sekolah.home_feature_column_2_content')}}</p>
+                <p><a href="#"><em>{{config('sekolah.home_feature_column_2_link_text')}} →</em></a></p>
             </div><!--grey box -->
         </div><!--/span3-->
         <div class="col-md-3">
@@ -30,10 +28,9 @@
                 <div class="icon-box-top grey-box-icon-pos">
                     <img src="{{asset('frontend/images/3.png')}}" alt="" />
                 </div><!--icon box top -->
-                <h4>Latest Updates</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent tempus eleifend risus ut congue
-                eset nec lacus elit dor broma.</p>
-                <p><a href="#"><em>Read More</em></a></p>
+                <h4>{{config('sekolah.home_feature_column_3_title')}}</h4>
+                <p>{{config('sekolah.home_feature_column_3_content')}}</p>
+                <p><a href="#"><em>{{config('sekolah.home_feature_column_3_link_text')}} →</em></a></p>
             </div><!--grey box -->
         </div><!--/span3-->
         <div class="col-md-3">
@@ -41,10 +38,9 @@
                 <div class="icon-box-top grey-box-icon-pos">
                     <img src="{{asset('frontend/images/4.png')}}" alt="" />
                 </div><!--icon box top -->
-                <h4>Placements</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent tempus eleifend risus ut congue
-                eset nec lacus elit dor broma.</p>
-                <p><a href="#"><em>Read More →</em></a></p>
+                <h4>{{config('sekolah.home_feature_column_4_title')}}</h4>
+                <p>{{config('sekolah.home_feature_column_4_content')}}</p>
+                <p><a href="#"><em>{{config('sekolah.home_feature_column_1_link_text')}} →</em></a></p>
             </div><!--grey box -->
         </div><!--/span3-->
     </div>
