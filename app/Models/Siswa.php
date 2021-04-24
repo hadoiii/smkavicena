@@ -58,7 +58,8 @@ class Siswa extends Model
             $total += $mapel->pivot->nilai;
             $hitung++;
         }
-        return round($total/$hitung);
+        $ratarata = @($total/$hitung);
+        return round($ratarata);
     }
 
     public function nama_lengkap()
