@@ -17,7 +17,7 @@
 									<p>{{$post->user->name}}</p>
 									
 									<h5>Diposting tanggal :</h5>
-									<p>{{$post->created_at}}</p>
+									<p>{{$post->created_at->format('D, d M Y')}}</p>
 									
 								</div>
 							</div> 

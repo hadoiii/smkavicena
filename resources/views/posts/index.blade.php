@@ -11,7 +11,7 @@
                             <h3 class="panel-title">POSTINGAN</h3>
                              <!-- Button trigger modal -->
                              <div class="right">
-                             <a href="#" class="btn btn-primary btn-sm">Postingan Baru</a>
+                             <a href="{{route('posts.add')}}" class="btn btn-primary btn-sm">Postingan Baru</a>
                              </div>
                         </div>
                         <div class="panel-body">

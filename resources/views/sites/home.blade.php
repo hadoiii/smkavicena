@@ -47,54 +47,25 @@
 </div>
     <section class="news-box top-margin">
     <div class="container">
-        <h2><span>New Courses</span></h2>
+        <h2><span>Kabar Terbaru</span></h2>
         <div class="row">
-    
+            @foreach($posts as $post)
             <div class="col-lg-4 col-md-4 col-sm-12">
                 <div class="newsBox">
                     <div class="thumbnail">
-                        <figure><img src="{{asset('frontend/images/news2.jpg')}}" alt=""></figure>
+                        <figure><img src="{{$post->thumbnail()}}" alt=""></figure>
                         <div class="caption maxheight2">
                         <div class="box_inner">
                                     <div class="box">
-                                        <p class="title"><h5>Developer</h5></p>
-                                        <p>Lorem ipsum dolor sit amet, conc tetu er adipi scing. Praesent ves tibuum molestie lacuiirhs. Aenean.</p>
+                                        <a href = "{{route('site.single.post', $post->slug)}}"><p class="title"><h5>{{$post->title}}</h5></p></a>
+                                        {!!$post->content!!}
                                     </div> 
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-4 col-sm-12">
-                <div class="newsBox">
-                    <div class="thumbnail">
-                        <figure><img src="{{asset('frontend/images/news3.jpg')}}" alt=""></figure>
-                        <div class="caption maxheight2">
-                        <div class="box_inner">
-                                    <div class="box">
-                                        <p class="title"><h5>Photography   </h5></p>
-                                        <p>Lorem ipsum dolor sit amet, conc tetu er adipi scing. Praesent ves tibuum molestie lacuiirhs. Aenean.</p>
-                                    </div> 
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-12">
-                <div class="newsBox">
-                    <div class="thumbnail">
-                        <figure><img src="{{asset('frontend/images/news4.jpg')}}" alt=""></figure>
-                        <div class="caption maxheight2">
-                        <div class="box_inner">
-                                    <div class="box">
-                                        <p class="title"><h5>Audio Editing</h5></p>
-                                        <p>Lorem ipsum dolor sit amet, conc tetu er adipi scing. Praesent ves tibuum molestie lacuiirhs. Aenean.</p>
-                                    </div> 
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 </section>
