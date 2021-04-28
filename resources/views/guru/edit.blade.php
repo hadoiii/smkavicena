@@ -11,7 +11,7 @@
                         <h3 class="panel-title">EDIT DATA GURU</h3>
                     </div>
                     <div class="panel-body">
-                        <form action="/guru/{{$guru->id_guru}}/update" method="POST" enctype="multipart/form-data">
+                        <form action="/guru/{{$guru->id}}/update" method="POST" enctype="multipart/form-data">
                             {{csrf_field()}}
                                 <div class="mb-3">
                                     <label for="exampleInputEmail1" class="form-label">NIP</label>

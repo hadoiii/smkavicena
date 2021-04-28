@@ -36,6 +36,10 @@ Route::group(['middleware' => ['auth', 'checkRole:admin']], function(){
     Route::get('/siswa/{siswa}/{idmapel}/deletenilai', 'SiswaController@deletenilai');
     Route::get('/siswa/exportexcel', 'SiswaController@exportExcel');
     Route::get('/siswa/exportpdf', 'SiswaController@exportPdf');
+    Route::get('getdatasiswa', [
+        'uses' => 'SiswaController@getdatasiswa',
+        'as' => 'ajax.get.data.siswa'
+    ]);
 
     /// Kumpulan Route Guru
     Route::get('/guru', 'GuruController@index');

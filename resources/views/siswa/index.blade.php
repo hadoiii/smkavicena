@@ -17,33 +17,20 @@
                             </div>
                         </div>
                         <div class="panel-body">
-                            <table class="table table-hover">
+                            <table class="table table-hover" id="datatable">
                                 <thead>
                                     <tr>
-                                    <th>NISN</th>
-                                    <th>NAMA DEPAN</th>
-                                    <th>NAMA BELAKANG</th>
-                                    <th>JENIS KELAMIN</th>
-                                    <th>ALAMAT</th>
-                                    <th>EMAIL</th>
-                                    <th>RERATA NILAI</th>
-                                    <th>AKSI</th>
+                                        <th>NISN</th>
+                                        <th>NAMA LENGKAP</th>
+                                        <th>JENIS KELAMIN</th>
+                                        <th>ALAMAT</th>
+                                        <th>EMAIL</th>
+                                        <th>RERATA NILAI</th>
+                                        <th>AKSI</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                @foreach($data_siswa as $siswa)
-                                <tr>
-                                    <td>{{$siswa->nisn}}</td>
-                                    <td><a href="/siswa/{{$siswa->id}}/profile">{{$siswa->nama_depan}}</a></td>
-                                    <td><a href="/siswa/{{$siswa->id}}/profile">{{$siswa->nama_belakang}}</a></td>
-                                    <td>{{$siswa->jenis_kelamin}}</td>
-                                    <td>{{$siswa->alamat}}</td>
-                                    <td>{{$siswa->email}}</td>
-                                    <td>{{$siswa->rataRataNilai()}}</td>
-                                    <td><a href="/siswa/{{$siswa->id}}/edit" class="btn btn-warning btn-sm">Edit</a></td>
-                                    <td><a href="#" class="btn btn-danger btn-sm class delete" siswa-id="{{$siswa->id}}">Hapus</a></td>
-                                </tr>
-                                @endforeach
+                                    
                                 </tbody>
                             </table>
                         </div>
@@ -279,6 +266,21 @@
 
 @section('footer')
     <script>
+    $(document).ready(function(){
+        $('#datatable').DataTable({
+            processing:true,
+            serverside:true,
+            ajax:"{{route('ajax.get.data.siswa')}}",
+            columns:[
+                {data: 'nisn', name: 'nisn'},
+                {data: 'nama_lengkap', name: 'nama_lengkap'},
+                {data: 'jenis_kelamin', name: 'jenis_kelamin'},
+                {data: 'alamat', name: 'alamat'},
+                {data: 'email', name: 'email'},
+                {data: 'rata2_nilai', name: 'rata2_nilai'},
+                {data: 'aksi', name: 'aksi'}
+            ]
+        });
         $('.delete').click(function(){
             var siswa_id = $(this).attr('siswa-id');
             swal({
@@ -296,5 +298,6 @@
                 });
             
         });
+    });
     </script>
 @stop

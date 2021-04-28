@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Siswa extends Model
 {
-    
+    use HasFactory;
     protected $table = 'siswa';
     protected $fillable = [
         'nisn',
@@ -53,13 +53,14 @@ class Siswa extends Model
     {
         $total = 0;
         $hitung = 0;
-        foreach($this->mapel as $mapel)
-        {
-            $total += $mapel->pivot->nilai;
-            $hitung++;
+        if($this->mapel->isNotEmpty()){
+            foreach($this->mapel as $mapel)
+            {
+                $total += $mapel->pivot->nilai;
+                $hitung++;
+            }
         }
-        $ratarata = @($total/$hitung);
-        return round($ratarata);
+        return $total!=0 ? round($total/$hitung) : $total;
     }
 
     public function nama_lengkap()
