@@ -9,10 +9,11 @@
                     <div class="panel">
                         <div class="panel-heading">
                             <h3 class="panel-title">DATA SISWA</h3>
-                             <!-- Button trigger modal -->
                              <div class="right">
-                             <a href="/siswa/exportexcel" class="btn btn-primary btn-sm">Export XLS</a>
-                             <a href="/siswa/exportpdf" class="btn btn-primary btn-sm">Export PDF</a>
+                               <a type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#importSiswa">Import XLS</a>
+                                <a href="/siswa/exportexcel" class="btn btn-primary btn-sm">Export XLS</a>
+                                <a href="/siswa/exportpdf" class="btn btn-primary btn-sm">Export PDF</a>
+                             <!-- Button trigger modal -->
                                 <button type="button" data-toggle="modal" data-target="#exampleModal"><i class="lnr lnr-plus-circle"></i></button>
                             </div>
                         </div>
@@ -41,7 +42,28 @@
     </div>
 </div>
 
-<!-- Modal -->
+<!-- MODAL IMPORT SISWA -->
+<div class="modal fade" id="importSiswa" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        </div>
+      <div class="modal-body">
+        {!!Form::open(['route' => 'siswa.import', 'class' => 'form-horizontal', 'enctype' => 'multipart/form-data'])!!}
+
+        {!!Form::file('data_siswa')!!}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <input type="submit" class="btn btn-primary" value="Import">
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL IMPUT DATA SISWA -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
