@@ -54,6 +54,11 @@ Route::group(['middleware' => ['auth', 'checkRole:admin']], function(){
 
 });
 
+/// ROUTE YANG HANYA BISA DIAKSES OLEH SISWA
+Route::group(['middleware' => ['auth', 'checkRole:siswa']], function(){
+    Route::get('/profilsaya', 'SiswaController@profilsaya');
+});
+
 /// ROUTE YANG BISA DIAKSES OLEH SIAPAPUN
 Route::group(['middleware' => ['auth', 'checkRole:admin,siswa,guru']], function(){
     Route::get('/dashboard', 'DashboardController@index');
