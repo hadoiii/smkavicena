@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use App\Models\Post;
+use App\Mail\NotifPendaftaranSiswa;
 
 class SiteController extends Controller
 {
@@ -40,12 +41,8 @@ class SiteController extends Controller
         $siswa = \App\Models\Siswa::create($request->all());
 
         /// PENGIRIMAN EMAIL NOTIFIKASI
-        \Mail::raw('Selamat datang '.$user->name, function($message) use($user){
-            $message->to($user->email ,$user->name);
-            $message->subject('Selamat bergabung di keluarga besar SMK Avicena!');
-            
-        });
-        
+        \Mail::to($user->email)->send(new NotifPendaftaranSiswa);
+
         return redirect('/login')->with('sukses', 'Pendaftaran Berhasil!');
 
     }
