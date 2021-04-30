@@ -39,7 +39,15 @@ class SiteController extends Controller
         $request->request->add(['user_id' => $user->id]);
         $siswa = \App\Models\Siswa::create($request->all());
 
+        /// PENGIRIMAN EMAIL NOTIFIKASI
+        \Mail::raw('Selamat datang '.$user->name, function($message) use($user){
+            $message->to($user->email ,$user->name);
+            $message->subject('Selamat bergabung di keluarga besar SMK Avicena!');
+            
+        });
+        
         return redirect('/login')->with('sukses', 'Pendaftaran Berhasil!');
+
     }
 
     public function singlepost($slug)
