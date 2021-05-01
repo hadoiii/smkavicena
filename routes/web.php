@@ -58,6 +58,10 @@ Route::group(['middleware' => ['auth', 'checkRole:admin']], function(){
 /// ROUTE YANG HANYA BISA DIAKSES OLEH SISWA
 Route::group(['middleware' => ['auth', 'checkRole:siswa']], function(){
     Route::get('/profilsaya', 'SiswaController@profilsaya');
+    Route::get('/forum', 'ForumController@index');
+    Route::post('/forum/create', 'ForumController@create');
+    Route::get('/forum/{forum}/view', 'ForumController@view');
+    Route::post('/forum/{forum}/view', 'ForumController@postkomentar');
 });
 
 /// ROUTE YANG BISA DIAKSES OLEH SIAPAPUN

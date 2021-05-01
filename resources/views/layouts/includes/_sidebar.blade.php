@@ -15,6 +15,7 @@
 						<!-- MENU YANG BISA DILIHAT SISWA -->
 						@if(auth()->user()->role == 'siswa')
 						<li><a href="/mapel" class=""><i class="lnr lnr-book"></i> <span>Mata Pelajaran</span></a></li>
+						<li><a href="/forum" class=""><i class="lnr lnr-book"></i> <span>Forum</span></a></li>
 						</ul>
 						@endif
 
