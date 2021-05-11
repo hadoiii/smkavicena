@@ -7,14 +7,16 @@ use Illuminate\Database\Eloquent\Model;
 
 class Kelas extends Model
 {
-    protected $primaryKey = 'id_kelas';
     public $timestamps = FALSE;
     protected $table = 'kelas';
     protected $fillable = [
-        'nama_kelas',
+        'kode',
+        'nama',
         ];
     public function siswa()
     {
-        return $this->belongsToMany(Siswa::class);
+        return $this->hasMany(Siswa::class);
     }
+
+    
 }

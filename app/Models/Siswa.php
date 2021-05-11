@@ -67,4 +67,9 @@ class Siswa extends Model
     {
         return $this->nama_depan.' '.$this->nama_belakang;
     }
+
+    public function kelas()
+    {
+        return $this->belongsTo(Kelas::class);
+    }
 }

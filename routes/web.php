@@ -42,6 +42,14 @@ Route::group(['middleware' => ['auth', 'checkRole:admin']], function(){
         'as' => 'ajax.get.data.siswa'
     ]);
 
+    /// Kumpulan Route Kelas
+    Route::get('/kelas', 'KelasController@index');
+    Route::post('/kelas/create', 'KelasController@create');
+    Route::get('/kelas/{id}/edit', 'KelasController@edit');
+    Route::post('/kelas/{id}/update', 'KelasController@update');
+    Route::get('/kelas/{id}/delete', 'KelasController@delete');
+    Route::get('/kelas/{id}/detail', 'KelasController@detail');
+
     /// Kumpulan Route Guru
     Route::get('/guru', 'GuruController@index');
     Route::post('/guru/create', 'GuruController@create');

@@ -106,6 +106,7 @@ class SiswaController extends Controller
     {
         //$siswa = \App\Models\Siswa::find($id);
         $matapelajaran = \App\Models\Mapel::all();
+        $kelas = \App\Models\Kelas::find($siswa);
 
         // Menyiapkan Data Untuk Grafik
         $categories = [];
@@ -119,7 +120,7 @@ class SiswaController extends Controller
                     $data[] = $siswa->mapel()->wherePivot('mapel_id', $mp->id)->first()->pivot->nilai;
                 }
             }
-        return view('siswa.profile', ['siswa' => $siswa, 'matapelajaran' => $matapelajaran, 'categories' => $categories, 'data' => $data]);
+        return view('siswa.profile', ['siswa' => $siswa, 'matapelajaran' => $matapelajaran, 'categories' => $categories, 'data' => $data, 'kelas' => $kelas]);
     }
 
     public function addnilai(Request $request, Siswa $siswa)
@@ -175,7 +176,8 @@ class SiswaController extends Controller
     public function profilsaya()
     {
         $siswa = auth()->user()->siswa;
-        return view('siswa.profilsaya', compact(['siswa']));
+        
+        return view('siswa.profilsaya', compact(['siswa', ]));
     }
 
     public function importexcel(Request $request)

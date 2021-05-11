@@ -57,7 +57,7 @@
                                 <li>TTL <span>{{$siswa->tempat_lahir}}, {{$siswa->tanggal_lahir}}</span></li>
                                 <li>Email <span>{{$siswa->email}}</span></li>
                                 <li>Nomor Ponsel <span>{{$siswa->no_ponsel}}</span></li>
-                                <li>Kelas <span>{{$siswa->kelas}}</span></li>
+                                <li>Kelas <span>{{$siswa->kelas->nama}}</span></li>
                             </ul>
                         </div>
                         <div class="text-center"><a href="/siswa/{{$siswa->id}}/edit" class="btn btn-warning">Edit Profile</a></div>
